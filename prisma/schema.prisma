@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,4 +5,15 @@ generator client {
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model Notification {
+  id          String    @id
+  recipientId String
+  content     String
+  category    String
+  readAt      DateTime?
+  createAt    DateTime  @default(now())
+
+  @@index([recipientId])
 }
