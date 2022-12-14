@@ -1,5 +1,4 @@
-import { IsNotEmpty } from 'class-validator';
-import { IsUUID, Length } from 'class-validator/types/decorator/decorators';
+import { IsNotEmpty, IsUUID, Length } from '@nestjs/class-validator';
 
 export class CreateNotificationBody {
   @IsNotEmpty()
@@ -7,9 +6,10 @@ export class CreateNotificationBody {
   recipientId: string;
 
   @IsNotEmpty()
-  @Length(5, 100)
+  @Length(5, 50)
   category: string;
 
   @IsNotEmpty()
+  @Length(5, 255)
   content: string;
 }
