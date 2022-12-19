@@ -1,5 +1,5 @@
-import { InMemoryNotificationsRepository } from '#test/app/repositories/in-memory-notifications-repository';
-import { SendNotification } from '#/app/use-cases/send-notification';
+import { InMemoryNotificationsRepository } from '@test/app/repositories/in-memory-notifications-repository';
+import { SendNotification } from '@app/use-cases/send-notification';
 
 describe('Send notification use case', () => {
   let notificationsRepository, sendNotification;

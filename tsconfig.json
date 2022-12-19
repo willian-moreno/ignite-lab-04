@@ -21,8 +21,11 @@
     "noFallthroughCasesInSwitch": false,
     "moduleResolution": "node",
     "paths": {
-      "#/*": ["src/*"],
-      "#test/*": ["test/*"]
+      "@src/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@infra/*": ["src/infra/*"],
+      "@utils/*": ["src/utils/*"],
+      "@test/*": ["test/*"]
     }
   }
 }

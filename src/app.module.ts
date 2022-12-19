@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { InfraModule } from '#/infra/infra.module';
+import { InfraModule } from '@infra/infra.module';
 
 @Module({
   imports: [InfraModule],

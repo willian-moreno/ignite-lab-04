@@ -9,7 +9,10 @@ export default {
   coverageDirectory: '../coverage',
   testEnvironment: 'node',
   moduleNameMapper: {
-    '^#/(.*)$': '<rootDir>/../src/$1',
-    '^#test/(.*)$': '<rootDir>/../test/$1',
+    '^@src/(.*)$': '<rootDir>/../src/$1',
+    '^@app/(.*)$': '<rootDir>/../src/app/$1',
+    '^@infra/(.*)$': '<rootDir>/../src/infra/$1',
+    '^@utils/(.*)$': '<rootDir>/../src/utils/$1',
+    '^@test/(.*)$': '<rootDir>/../test/$1',
   },
 };

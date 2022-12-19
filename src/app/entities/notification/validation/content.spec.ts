@@ -1,4 +1,4 @@
-import { Content } from '#/app/entities/notification/validation/content';
+import { Content } from '@app/entities/notification/validation/content';
 
 describe('Notification content', () => {
   it('should be able to create a notification with valid content length', () => {

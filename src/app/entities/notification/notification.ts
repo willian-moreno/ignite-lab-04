@@ -1,5 +1,5 @@
-import { Replace } from '#/utils/helpers/Replace';
-import { Content } from '#/app/entities/notification/validation/content';
+import { Replace } from '@utils/helpers/Replace';
+import { Content } from '@app/entities/notification/validation/content';
 import { randomUUID } from 'node:crypto';
 
 export interface NotificationProtocol {
@@ -7,6 +7,7 @@ export interface NotificationProtocol {
   recipientId: string;
   category: string;
   readAt?: Date | null;
+  canceledAt?: Date | null;
   createdAt: Date;
 }
 
@@ -56,6 +57,10 @@ export class Notification {
 
   public set readAt(readAt: Date | null | undefined) {
     this.props.readAt = readAt;
+  }
+
+  public cancel() {
+    return (this.props.canceledAt = new Date());
   }
 
   public get createdAt(): Date {

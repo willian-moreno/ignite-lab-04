@@ -1,6 +1,6 @@
-import { Notification } from '#/app/entities/notification/notification';
-import { Content } from '#/app/entities/notification/validation/content';
-import { NotificationsRepository } from '#/app/repositories/notifications-repository';
+import { Notification } from '@app/entities/notification/notification';
+import { Content } from '@app/entities/notification/validation/content';
+import { NotificationsRepository } from '@app/repositories/notifications-repository';
 import { Injectable } from '@nestjs/common';
 
 interface SendNotificationRequestProtocol {
