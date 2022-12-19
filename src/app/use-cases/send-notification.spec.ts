@@ -2,7 +2,9 @@ import { InMemoryNotificationsRepository } from '@test/app/repositories/in-memor
 import { SendNotification } from '@app/use-cases/send-notification';
 
 describe('Send notification use case', () => {
-  let notificationsRepository, sendNotification;
+  let notificationsRepository: InMemoryNotificationsRepository;
+  let sendNotification: SendNotification;
+
   const mocks = {
     valid: {
       content: 'You received a new message. Hello World!!',
@@ -14,11 +16,6 @@ describe('Send notification use case', () => {
   beforeEach(() => {
     notificationsRepository = new InMemoryNotificationsRepository();
     sendNotification = new SendNotification(notificationsRepository);
-  });
-
-  afterEach(() => {
-    notificationsRepository = null;
-    sendNotification = null;
   });
 
   it('should be able to send a notification', async () => {
