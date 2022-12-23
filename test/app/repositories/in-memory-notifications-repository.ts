@@ -1,4 +1,4 @@
-import { Notification } from '@app/entities/notification/notification';
+import { Notification } from '@src/app/entities/notification';
 import { NotificationsRepository } from '@app/repositories/notifications-repository';
 
 export class InMemoryNotificationsRepository
@@ -11,6 +11,15 @@ export class InMemoryNotificationsRepository
       this.notifications.find(({ id }) => id === notificationId) || null;
 
     return notification;
+  }
+
+  async findManyByRecipientId(recipientId: string): Promise<Notification[]> {
+    const notifications =
+      this.notifications.filter(
+        (notification) => notification.recipientId === recipientId,
+      ) || [];
+
+    return notifications;
   }
 
   async create(notification: Notification) {

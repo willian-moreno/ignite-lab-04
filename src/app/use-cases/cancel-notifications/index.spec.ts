@@ -1,8 +1,8 @@
 import { InMemoryNotificationsRepository } from '@test/app/repositories/in-memory-notifications-repository';
 import { CancelNotification } from '@app/use-cases/cancel-notifications';
-import { Notification } from '@app/entities/notification/notification';
-import { NotificationNotFound } from './errors/notification-not-found';
-import { validNotification } from '@test/mocks/notification-mocks';
+import { Notification } from '@src/app/entities/notification';
+import { NotificationNotFound } from '../errors/notification-not-found';
+import { makeNotification } from '@test/factories/notification-factory';
 
 describe('Cancel notification use case', () => {
   let notificationsRepository: InMemoryNotificationsRepository;
@@ -12,7 +12,7 @@ describe('Cancel notification use case', () => {
   beforeEach(() => {
     notificationsRepository = new InMemoryNotificationsRepository();
     cancelNotification = new CancelNotification(notificationsRepository);
-    notification = new Notification(validNotification);
+    notification = makeNotification();
   });
 
   afterEach(() => {

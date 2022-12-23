@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import { Replace } from '@utils/helpers/Replace';
 import { Content } from '@app/entities/notification/validation/content';
 import { randomUUID } from 'node:crypto';
@@ -15,8 +17,11 @@ export class Notification {
   private _id: string;
   private props: NotificationProtocol;
 
-  constructor(props: Replace<NotificationProtocol, { createdAt?: Date }>) {
-    this._id = `${randomUUID()}`;
+  constructor(
+    props: Replace<NotificationProtocol, { createdAt?: Date }>,
+    id?: string,
+  ) {
+    this._id = id ?? `${randomUUID()}`;
     this.props = {
       ...props,
       createdAt: props.createdAt ?? new Date(),
@@ -55,8 +60,12 @@ export class Notification {
     return this.props.readAt;
   }
 
-  public set readAt(readAt: Date | null | undefined) {
-    this.props.readAt = readAt;
+  public read() {
+    this.props.readAt = new Date();
+  }
+
+  public unread() {
+    this.props.readAt = null;
   }
 
   public cancel() {

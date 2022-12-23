@@ -1,6 +1,6 @@
 import { InMemoryNotificationsRepository } from '@test/app/repositories/in-memory-notifications-repository';
 import { SendNotification } from '@app/use-cases/send-notification';
-import { validNotificationWithStringContent } from '@test/mocks/notification-mocks';
+import { validNotification } from '@test/mocks/notification-mocks';
 
 describe('Send notification use case', () => {
   let notificationsRepository: InMemoryNotificationsRepository;
@@ -16,9 +16,10 @@ describe('Send notification use case', () => {
   });
 
   it('should be able to send a notification', async () => {
-    const { notification } = await sendNotification.execute(
-      validNotificationWithStringContent,
-    );
+    const { notification } = await sendNotification.execute({
+      ...validNotification,
+      content: String(validNotification.content),
+    });
 
     expect(notification).toBeTruthy();
     expect(notificationsRepository.notifications).toHaveLength(1);

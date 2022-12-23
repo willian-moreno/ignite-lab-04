@@ -5,9 +5,3 @@ export const validNotification = {
   category: 'social',
   recipientId: `recipient`,
 };
-
-export const validNotificationWithStringContent = {
-  content: 'You received a new message. Hello World!!',
-  category: 'social',
-  recipientId: `recipient`,
-};
