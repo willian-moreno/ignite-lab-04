@@ -82,7 +82,7 @@
       "method": "POST",
       "body": {
         "mimeType": "",
-        "text": "{\r\n    \"content\": \"Your receive a new notification!!\",\r\n    \"category\": \"social\",\r\n    \"recipientId\": \"74b0f951-876b-497c-ae4b-ce6997e50d64\"\r\n}"
+        "text": "{\r\n    \"content\": \"You receive a new notification!!\",\r\n    \"category\": \"social\",\r\n    \"recipientId\": \"74b0f951-876b-497c-ae4b-ce6997e50d64\"\r\n}"
       },
       "parameters": [],
       "headers": [{ "name": "Content-Type", "value": "application/json" }],
