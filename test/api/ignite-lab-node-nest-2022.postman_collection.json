@@ -1,0 +1,79 @@
+{
+  "info": {
+    "_postman_id": "09d95ae5-29bd-4b35-8f66-374a9c62f96a",
+    "name": "ignite-lab-node-nest-2022",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "13421587"
+  },
+  "item": [
+    {
+      "name": "create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"content\": \"Your receive a new notification!!\",\r\n    \"category\": \"social\",\r\n    \"recipientId\": \"74b0f951-876b-497c-ae4b-ce6997e50d64\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{lh_3000_notifications}}",
+          "host": ["{{lh_3000_notifications}}"],
+          "path": ["/"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get by recipientId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{lh_3000_notifications}}/from/74b0f951-876b-497c-ae4b-ce6997e50d64",
+          "host": ["{{lh_3000_notifications}}"],
+          "path": ["from", "74b0f951-876b-497c-ae4b-ce6997e50d64"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "count",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "lh_3000",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "lh_3000_notifications",
+      "value": "http://localhost:3000/notifications"
+    }
+  ]
+}
